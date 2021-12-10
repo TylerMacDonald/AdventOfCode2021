@@ -1,7 +1,8 @@
-const fs = require("fs");
-let text = fs.readFileSync("day11.txt").toString('utf-8');
+const file = require("./import");
+let text = file.getInput("day11.txt");
 let read = text.split("\r\n");
 let input = [];
+
 for(let i=0; i<read.length; i++){
     input.push(read[i].split(''));
 }

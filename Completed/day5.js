@@ -1,7 +1,5 @@
-const { Console } = require("console");
-const fs = require("fs");
-const { setSyntheticLeadingComments } = require("typescript");
-let text = fs.readFileSync("day5.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day5.txt");
 let lines = text.split("\r\n");
 let pairs = [];
 let counts = Array(1000).fill().map(() => Array(1000).fill(0));

@@ -1,6 +1,5 @@
-const { Console } = require("console");
-const fs = require("fs");
-let text = fs.readFileSync("day6.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day6.txt");
 let input = text.split(",").map(x=>Number(x));
 function loopDays(days){
     let map = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0};

@@ -1,6 +1,5 @@
-const { Console } = require("console");
-const fs = require("fs");
-let text = fs.readFileSync("day7.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day7.txt");
 //text = "16,1,2,0,4,2,7,1,2,14"//sample
 let input = text.split(",").map(x=>Number(x));
 

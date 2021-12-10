@@ -1,6 +1,5 @@
-const fs = require("fs");
-const { isIfStatement } = require("typescript");
-let text = fs.readFileSync("day8.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day8.txt");
 let data = text.split("\r\n");
 let pairs = [];
 let part1 = 0;

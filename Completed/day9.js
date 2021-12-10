@@ -1,5 +1,5 @@
-const fs = require("fs");
-let text = fs.readFileSync("day9.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day9.txt");
 let read = text.split("\r\n");
 let input = [];
 let checked = [];

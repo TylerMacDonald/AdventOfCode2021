@@ -1,13 +1,13 @@
-import fs from "fs";
-let text : string = fs.readFileSync("day2.txt").toString('utf-8');
-let input : string[] = text.split("\r\n");
+const file = require("../import");
+let text = file.getInput("day2.txt");
+let input = text.split("\r\n");
 
-let x : number = 0;
-let depth : number = 0;
-let depthp2 : number = 0;
-let aim : number = 0;
+let x = 0;
+let depth = 0;
+let depthp2 = 0;
+let aim = 0;
 
-for(let i : number=0; i<input.length; i++){
+for(let i =0; i<input.length; i++){
     let pair = input[i].split(" ");
     if(pair[0][0]=="f"){
         x+=Number(pair[1]);

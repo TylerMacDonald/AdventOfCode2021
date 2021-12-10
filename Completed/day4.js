@@ -1,6 +1,5 @@
-const { Console } = require("console");
-const fs = require("fs");
-let text = fs.readFileSync("day6.txt").toString('utf-8');
+const file = require("../import");
+let text = file.getInput("day4.txt");
 let input = text.split("\r\n");
 
 let counts = [0];
