@@ -1,5 +1,5 @@
 const file = require("./import");
-let text = file.getInput("day11.txt");
+let text = file.getInput("sample.txt");
 let read = text.split("\r\n");
 let input = [];
 
