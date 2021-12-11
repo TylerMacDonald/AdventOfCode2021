@@ -10,19 +10,16 @@ let maxY = input.length;
 let size = maxX*maxY;
 
 function flashRecurse(x,y){
-    let dR=[-1,0,1];
-    let dC=[-1,0,1];
+    let d=[[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]; // All neighour Deltas
     input[y][x] = "f";
-    for(let r=0; r<3; r++){
-        for(let c=0; c<3; c++){
-            let newX = x+dR[r];
-            let newY = y+dC[c];
-            if((newX>=0 && newX<maxX) && (newY>=0 && newY<maxY)){
-                if(input[newY][newX]!="f"){
-                    input[newY][newX]++;
-                    if(input[newY][newX]>=10){
-                        flashRecurse(newX,newY);
-                    }
+    for(let i=0; i<8; i++){
+        let newX = x+d[i][0];
+        let newY = y+d[i][1];
+        if((newX>=0 && newX<maxX) && (newY>=0 && newY<maxY)){ //Make sure its in bounds
+            if(input[newY][newX]!="f"){ // Not already flashed
+                input[newY][newX]++;
+                if(input[newY][newX]>=10){
+                    flashRecurse(newX,newY); // flash if it should flash
                 }
             }
         }
@@ -32,10 +29,11 @@ function flashRecurse(x,y){
 
 let flashCount = 0;
 let count=0;
-let i = 0;
+let step = 0;
 while(count<size){ //Exit loop when All flashes are found.
     count=0;
-    input = input.map(y=>y.map(function(x){return x+1}));
+    step++;
+    input = input.map(y=>y.map(function(x){return x+1})); //increment entire grid
     for(let y=0; y<input.length; y++){
         for(let x=0; x<input[y].length; x++){
             if(input[y][x]==10){
@@ -52,9 +50,8 @@ while(count<size){ //Exit loop when All flashes are found.
             }
         }
     }
-    if(i==99){ // Print Part 1 at step 100
+    if(step==100){ // Print Part 1 at step 100
         console.log("Part 1: ", flashCount);
     }
-    i++;
 }
-console.log("Part 2: ", i);
+console.log("Part 2: ", step);
