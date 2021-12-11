@@ -1,4 +1,4 @@
-const file = require("./import");
+const file = require("../import");
 let text = file.getInput("day11.txt");
 let read = text.split("\r\n");
 let input = [];
@@ -17,10 +17,12 @@ function flashRecurse(x,y){
         for(let c=0; c<3; c++){
             let newX = x+dR[r];
             let newY = y+dC[c];
-            if((newX>=0 && newX<maxX) && (newY>=0 && newY<maxY) && input[newY][newX]!="f"){
-                input[newY][newX]++;
-                if(input[newY][newX]>=10){
-                    flashRecurse(newX,newY);
+            if((newX>=0 && newX<maxX) && (newY>=0 && newY<maxY)){
+                if(input[newY][newX]!="f"){
+                    input[newY][newX]++;
+                    if(input[newY][newX]>=10){
+                        flashRecurse(newX,newY);
+                    }
                 }
             }
         }
