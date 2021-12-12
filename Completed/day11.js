@@ -28,9 +28,8 @@ function flashRecurse(x,y){
     }
 }
 
-
 let part1 = 0;
-let part2=0;
+let part2 = 0;
 let step = 0;
 while(part2<size){ //Exit loop when All flashes are found.
     part2=0;

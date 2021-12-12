@@ -8,11 +8,11 @@ function getText(filename){
     if(fs.existsSync(filename)){
         return fs.readFileSync(filename).toString('utf-8');
     }else{
-        filename = './'+filename;
+        filename = './'+old;
         if(fs.existsSync(filename)){
             return fs.readFileSync(filename).toString('utf-8');
         }
-        filename = './completed/'+old;
+        filename = './Completed/'+old;
         if(fs.existsSync(filename)){
             return fs.readFileSync(filename).toString('utf-8');
         }
