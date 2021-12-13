@@ -28,40 +28,35 @@ for(let i=0; i<read.length; i++){
         }
     }
 }
-
-maxx++;
-maxy++;
 //init Grid
-let grid = Array(maxy).fill().map(() => Array(maxx).fill(' '));
+let grid = Array(maxy+1).fill().map(() => Array(maxx+1).fill(' '));
 for(let i=0; i<input.length; i++){
-    //console.log(input[i]);
     grid[input[i][1]][input[i][0]]='#';
 }
 
 function fold(f){
     let newGrid = null;
     if(f[1]==-1){
-        newGrid = Array(f[0]).fill().map(() => Array(maxx).fill(' '));
+        newGrid = Array(f[0]).fill().map(() => Array(maxx+1).fill(' '));
         for(let y=0; y<newGrid.length; y++){
             for(let x=0; x<newGrid[y].length; x++){
-                //console.log(x,y);
-                if(grid[y][x]=="#" || grid[(maxy-1)-y][x]=="#"){
+                if(grid[y][x]=="#" || grid[maxy-y][x]=="#"){
                     newGrid[y][x]="#";
                 }
             }
         }
     }else{
-        newGrid = Array(maxy).fill().map(() => Array(f[1]).fill(' '));
+        newGrid = Array(maxy+1).fill().map(() => Array(f[1]).fill(' '));
         for(let y=0; y<newGrid.length; y++){
             for(let x=0; x<newGrid[y].length; x++){
-                if(grid[y][x]=="#" || grid[y][(maxx-1)-x]=="#"){
+                if(grid[y][x]=="#" || grid[y][maxx-x]=="#"){
                     newGrid[y][x]="#";
                 }
             }
         }
     }
-    maxy = newGrid.length;
-    maxx = newGrid[0].length;
+    maxy = newGrid.length-1;
+    maxx = newGrid[0].length-1;
     return newGrid;
 }
 
