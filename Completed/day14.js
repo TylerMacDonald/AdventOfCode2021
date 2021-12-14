@@ -2,7 +2,6 @@ const file = require("../import");
 //let text = file.getInput("sample.txt");
 let text = file.getInput("day14.txt");
 let read = text.split("\r\n");
-let input = [];
 let template = read[0];
 let rules = {};
 let counts = {};
