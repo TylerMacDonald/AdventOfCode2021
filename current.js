@@ -6,5 +6,6 @@ let input = [];
 for(let i=0; i<read.length; i++){
     input.push(read[i].split('').map(x=>Number(x)));
 }
-console.log("Part 1: ",);
-console.log("Part 2: ",);
+
+console.log("Part 1: ", );
+console.log("Part 2: ", );
