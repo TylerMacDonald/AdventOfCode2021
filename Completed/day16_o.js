@@ -1,6 +1,6 @@
-const file = require("../import");
-const _ = require("../customAssert");
-const p = require("../packetUtils");
+const file = require("../utils/import");
+const _ = require("../utils/customAssert");
+const p = require("../utils/packetUtils");
 const input = file.getInput("day16.txt");
 
 function part1(input) {
