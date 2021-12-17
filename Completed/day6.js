@@ -1,4 +1,4 @@
-const file = require("../import");
+const file = require("../utils/import");
 let text = file.getInput("day6.txt");
 let input = text.split(",").map(x=>Number(x));
 function loopDays(days){

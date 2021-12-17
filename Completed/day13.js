@@ -1,4 +1,4 @@
-const file = require("../import");
+const file = require("../utils/import");
 let text = file.getInput("day13.txt");
 let read = text.split("\r\n");
 let input = [];

@@ -1,4 +1,4 @@
-const file = require("../import");
+const file = require("../utils/import");
 //let text = file.getInput("sample.txt");
 let text = file.getInput("day16.txt");
 let read = text;

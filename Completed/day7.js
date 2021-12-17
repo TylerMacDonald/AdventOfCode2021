@@ -1,4 +1,4 @@
-const file = require("../import");
+const file = require("../utils/import");
 let text = file.getInput("day7.txt");
 //text = "16,1,2,0,4,2,7,1,2,14"//sample
 let input = text.split(",").map(x=>Number(x));
