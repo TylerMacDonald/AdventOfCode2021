@@ -1,5 +1,5 @@
-const file = require("../utils/import");
-const _ = require('../utils/customAssert');
+const file = require("./utils/import");
+const _ = require('./utils/customAssert');
 let text = file.getInput("sample.txt");
 //let text = file.getInput("input.txt");
 let read = text.split("\r\n");
