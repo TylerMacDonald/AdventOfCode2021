@@ -100,4 +100,5 @@ let part2 = 0;
 while(solveBinary(out, (x)=>part2=x));
 part1 = versions.reduce((a,b) => a + b); // Sum Versions for Part 1.
 console.log("Part 1: ", part1);
+eval(`0b${BigInt(`0x1${text}`).toString(2).substring(1).replaceAll(/(...)(100(1....)*0....|...(0.{15}|1.{11}))/g, "$1+0b")}0`)
 console.log("Part 2: ", part2);

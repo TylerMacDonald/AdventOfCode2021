@@ -1,4 +1,5 @@
 const file = require("./import");
+const _ = require('./customAssert');
 let text = file.getInput("sample.txt");
 //let text = file.getInput("input.txt");
 let read = text.split("\r\n");
