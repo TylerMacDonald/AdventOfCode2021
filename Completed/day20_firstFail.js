@@ -2,7 +2,7 @@ const file = require("../utils/import");
 //let text = file.getInput("sample.txt");
 let text = file.getInput("day20.txt");
 let read = text.split("\r\n");
-let lookup = read[0];
+let lookup = read[0].split('').map(x=>x=='#');
 var points = new Set();
 let minx;
 let maxx;
@@ -29,9 +29,9 @@ function findminMax(points){
 function step(points, on){
     let points2 = new Set();
     findminMax(points);
-    for(let y=miny-5; y<maxy+10; y++){
-        for(let x=minx-5; x<maxx+10; x++){
-            let str = "";
+    for(let y=miny-1; y<maxy+2; y++){
+        for(let x=minx-1; x<maxx+2; x++){
+            let str = 0;
             let bit = 8;
             for(let dy=-1; dy<=1; dy++){
                 for(let dx=-1; dx<=1; dx++){
@@ -41,7 +41,7 @@ function step(points, on){
                     bit--;
                 }
             }
-            if((lookup[str]=="#") !== on){
+            if(lookup[str] == on){
                 points2.add(`${x},${y}`);
             }
         }
@@ -49,7 +49,7 @@ function step(points, on){
     return points2;
 }
 
-function drawGrid(points){
+/*function drawGrid(points){
     findminMax(points);
     for(let y=miny-5; y<maxy+5; y++){
         let row = "";
@@ -62,12 +62,12 @@ function drawGrid(points){
         }
         console.log(row);
     }
-}
+}*/
 
-for(let i=0; i<2; i++){
+for(let i=0; i<50; i++){
     console.log(points.size);
     //drawGrid(points);
-    points = step(points, (i%2==0 && lookup[0]=='#' && lookup[511]=="."));
+    points = step(points, (i%2==1 && lookup[0]=='#'));
     if(i==1){
         //drawGrid(points);
         console.log("Part 1:", points.size);
