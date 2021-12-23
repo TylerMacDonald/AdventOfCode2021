@@ -7,9 +7,11 @@ I am not a programmer by profession, but enjoy coding on my own time.
 Scores 2021:
 
 Had a late start on Day 1, 6, and 11... Day 18-20 kicked my ass... 
+Day 22, At my families for holiday, gave up on part 2 about an hour into start, came back to it the next day.
 
            --------Part 1--------   --------Part 2--------
       Day       Time   Rank  Score       Time   Rank  Score
+      22   00:14:30   1041      0   23:03:06   8869      0
       21   00:23:38   2468      0   01:08:32   1567      0
       20   03:31:30   5319      0   03:41:04   5163      0
       19   02:55:40   1331      0   03:02:34   1218      0
